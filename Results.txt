@@ -1,0 +1,25 @@
+######################### USAGE ****************************
+a<-matrix(5:13, nrow=3, ncol=3)
+NOTE matrix needs to be symmetric for inverse matrix to be computed
+y<- makeCacheMatrix(a)
+#First time the computation will be done
+cacheSolve(y)
+#Test again to see if cached value is used
+#you will see the message "getting cached data"
+cacheSolve(y)
+
+#Sample result 
+
+> a<-matrix(1:4, nrow=2, ncol=2)
+> y<- makeCacheMatrix(a)
+> cacheSolve(y)
+     [,1] [,2]
+[1,]   -2  1.5
+[2,]    1 -0.5
+> cacheSolve(y)
+getting cached data
+     [,1] [,2]
+[1,]   -2  1.5
+[2,]    1 -0.5
+> 
+
